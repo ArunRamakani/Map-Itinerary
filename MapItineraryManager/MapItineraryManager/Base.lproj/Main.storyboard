@@ -1,0 +1,257 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8191" systemVersion="15B17c" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="H1p-Uh-vWS">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="Navigation items with more than one left or right bar item" minToolsVersion="7.0"/>
+    </dependencies>
+    <scenes>
+        <!--My Itinerary-->
+        <scene sceneID="pY4-Hu-kfo">
+            <objects>
+                <navigationController title="My Itinerary" id="RMx-3f-FxP" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="Pmd-2v-anx">
+                        <autoresizingMask key="autoresizingMask"/>
+                        <animations/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="7bK-jq-Zjz" kind="relationship" relationship="rootViewController" id="tsl-Nk-0bq"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="8fS-aE-onr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-38" y="-630"/>
+        </scene>
+        <!--Detail-->
+        <scene sceneID="yUG-lL-AsK">
+            <objects>
+                <viewController title="Detail" id="JEX-9P-axG" customClass="DetailViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="SYR-Wa-9uf"/>
+                        <viewControllerLayoutGuide type="bottom" id="GAO-Cl-Wes"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="svH-Pt-448">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="3Zl-8b-z5H">
+                                <rect key="frame" x="0.0" y="64" width="600" height="487"/>
+                                <animations/>
+                                <connections>
+                                    <outlet property="delegate" destination="JEX-9P-axG" id="u7k-PW-CdE"/>
+                                </connections>
+                            </mapView>
+                            <tabBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="b61-zF-xD7">
+                                <rect key="frame" x="0.0" y="551" width="600" height="49"/>
+                                <animations/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <items>
+                                    <tabBarItem tag="1" title="Map" image="mapView" id="IWS-ip-xJM"/>
+                                    <tabBarItem tag="2" systemItem="more" id="gPn-Qq-NyP"/>
+                                </items>
+                                <connections>
+                                    <outlet property="delegate" destination="JEX-9P-axG" id="3H4-yl-ITe"/>
+                                </connections>
+                            </tabBar>
+                            <tableView hidden="YES" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Lgu-Rk-56Z">
+                                <rect key="frame" x="0.0" y="64" width="600" height="487"/>
+                                <animations/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="JEX-9P-axG" id="ebp-M9-ODk"/>
+                                    <outlet property="delegate" destination="JEX-9P-axG" id="b26-rN-tGX"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <animations/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="3Zl-8b-z5H" firstAttribute="leading" secondItem="svH-Pt-448" secondAttribute="leadingMargin" constant="-20" id="7Fy-gN-1jk"/>
+                            <constraint firstItem="b61-zF-xD7" firstAttribute="leading" secondItem="svH-Pt-448" secondAttribute="leadingMargin" constant="-20" id="A7l-nV-qDB"/>
+                            <constraint firstItem="Lgu-Rk-56Z" firstAttribute="leading" secondItem="svH-Pt-448" secondAttribute="leadingMargin" constant="-20" id="GQ7-Ow-Y99"/>
+                            <constraint firstItem="Lgu-Rk-56Z" firstAttribute="top" secondItem="SYR-Wa-9uf" secondAttribute="bottom" id="IS1-tf-MAn"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="3Zl-8b-z5H" secondAttribute="trailing" constant="-20" id="L6W-KP-FZB"/>
+                            <constraint firstItem="GAO-Cl-Wes" firstAttribute="top" secondItem="3Zl-8b-z5H" secondAttribute="bottom" constant="49" id="Uzq-Bz-ygd"/>
+                            <constraint firstItem="GAO-Cl-Wes" firstAttribute="top" secondItem="b61-zF-xD7" secondAttribute="bottom" id="WM5-Tm-ag4"/>
+                            <constraint firstItem="3Zl-8b-z5H" firstAttribute="top" secondItem="SYR-Wa-9uf" secondAttribute="bottom" id="YW7-zJ-LDP"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="Lgu-Rk-56Z" secondAttribute="trailing" constant="-20" id="Yb3-T0-SKD"/>
+                            <constraint firstItem="b61-zF-xD7" firstAttribute="top" secondItem="Lgu-Rk-56Z" secondAttribute="bottom" id="twG-WH-09y"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="b61-zF-xD7" secondAttribute="trailing" constant="-20" id="wrR-Qg-bI1"/>
+                        </constraints>
+                    </view>
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" title="Route" id="mOI-FS-AaM">
+                        <rightBarButtonItems>
+                            <barButtonItem systemItem="refresh" id="A36-5h-9Ov" userLabel="Refresh">
+                                <connections>
+                                    <action selector="refreshButtonClicked:" destination="JEX-9P-axG" id="jxr-vw-pF7"/>
+                                </connections>
+                            </barButtonItem>
+                            <barButtonItem image="settings" id="Vb6-Td-Bx0" userLabel="Setting">
+                                <connections>
+                                    <action selector="settingButtonClicked:" destination="JEX-9P-axG" id="4t6-J8-vHV"/>
+                                </connections>
+                            </barButtonItem>
+                        </rightBarButtonItems>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="mapView" destination="3Zl-8b-z5H" id="25a-NM-nEC"/>
+                        <outlet property="routeInstructions" destination="Lgu-Rk-56Z" id="f2Z-up-uxl"/>
+                        <outlet property="tabBar" destination="b61-zF-xD7" id="KOq-Ps-p4i"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="FJe-Yq-33r" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="709" y="129"/>
+        </scene>
+        <!--Split View Controller-->
+        <scene sceneID="Nki-YV-4Qg">
+            <objects>
+                <splitViewController id="H1p-Uh-vWS" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <connections>
+                        <segue destination="RMx-3f-FxP" kind="relationship" relationship="masterViewController" id="BlO-5A-QYV"/>
+                        <segue destination="vC3-pB-5Vb" kind="relationship" relationship="detailViewController" id="Tll-UG-LXB"/>
+                    </connections>
+                </splitViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="cZU-Oi-B1e" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-856" y="-330"/>
+        </scene>
+        <!--Master-->
+        <scene sceneID="smW-Zh-WAh">
+            <objects>
+                <tableViewController title="Master" clearsSelectionOnViewWillAppear="NO" id="7bK-jq-Zjz" customClass="MasterViewController" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="r7i-6Z-zg0">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <animations/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="ItineraryCell" rowHeight="100" id="Pnc-Z9-RYB" customClass="ItineraryTableCell">
+                                <rect key="frame" x="0.0" y="86" width="600" height="100"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Pnc-Z9-RYB" id="e19-1u-AFS">
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="100"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="itineraryIcon" highlightedImage="itineraryIcon" translatesAutoresizingMaskIntoConstraints="NO" id="IkL-jS-Vf3">
+                                            <rect key="frame" x="12" y="35" width="50" height="50"/>
+                                            <animations/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="50" id="29D-F1-cdq"/>
+                                                <constraint firstAttribute="width" constant="50" id="uT8-Aq-GQO"/>
+                                            </constraints>
+                                        </imageView>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="TripName" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TxT-B0-qev" userLabel="Created">
+                                            <rect key="frame" x="12" y="8" width="580" height="23"/>
+                                            <animations/>
+                                            <fontDescription key="fontDescription" type="system" weight="medium" pointSize="20"/>
+                                            <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Itinerary Path" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="16t-EK-nd4">
+                                            <rect key="frame" x="80" y="37" width="480" height="35"/>
+                                            <animations/>
+                                            <fontDescription key="fontDescription" type="italicSystem" pointSize="17"/>
+                                            <color key="textColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="hMw-ss-2xw" userLabel="Cell Devider">
+                                            <rect key="frame" x="0.0" y="98" width="600" height="1"/>
+                                            <animations/>
+                                            <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="1" id="or1-5z-P7R"/>
+                                            </constraints>
+                                        </imageView>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Created : " lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Aq8-Hn-NlT" userLabel="Created">
+                                            <rect key="frame" x="80" y="74" width="480" height="18"/>
+                                            <animations/>
+                                            <fontDescription key="fontDescription" type="italicSystem" pointSize="12"/>
+                                            <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jS9-DR-jTF">
+                                            <rect key="frame" x="568" y="35" width="30" height="30"/>
+                                            <animations/>
+                                            <state key="normal" title="Button" image="EditRoute"/>
+                                        </button>
+                                    </subviews>
+                                    <animations/>
+                                    <color key="backgroundColor" cocoaTouchSystemColor="lightTextColor"/>
+                                    <constraints>
+                                        <constraint firstItem="hMw-ss-2xw" firstAttribute="top" secondItem="Aq8-Hn-NlT" secondAttribute="bottom" constant="6" id="2Ci-DP-FGr"/>
+                                        <constraint firstItem="16t-EK-nd4" firstAttribute="top" secondItem="TxT-B0-qev" secondAttribute="bottom" constant="6" id="3Vz-Ij-FfR"/>
+                                        <constraint firstItem="hMw-ss-2xw" firstAttribute="top" secondItem="16t-EK-nd4" secondAttribute="bottom" constant="26" id="8DF-ev-RgU"/>
+                                        <constraint firstItem="Aq8-Hn-NlT" firstAttribute="top" secondItem="16t-EK-nd4" secondAttribute="bottom" constant="2" id="Apb-Qm-pTj"/>
+                                        <constraint firstItem="TxT-B0-qev" firstAttribute="trailing" secondItem="e19-1u-AFS" secondAttribute="trailingMargin" id="C9l-5d-Oxb"/>
+                                        <constraint firstAttribute="bottomMargin" secondItem="hMw-ss-2xw" secondAttribute="bottom" constant="-7.5" id="Eb4-sv-450"/>
+                                        <constraint firstItem="IkL-jS-Vf3" firstAttribute="top" secondItem="TxT-B0-qev" secondAttribute="bottom" constant="4" id="Iit-k0-1xD"/>
+                                        <constraint firstItem="Aq8-Hn-NlT" firstAttribute="leading" secondItem="IkL-jS-Vf3" secondAttribute="trailing" constant="18" id="JTK-CQ-y5d"/>
+                                        <constraint firstItem="16t-EK-nd4" firstAttribute="leading" secondItem="IkL-jS-Vf3" secondAttribute="trailing" constant="18" id="MBK-Pw-NKv"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="jS9-DR-jTF" secondAttribute="trailing" constant="-6" id="TAp-WF-djh"/>
+                                        <constraint firstItem="IkL-jS-Vf3" firstAttribute="leading" secondItem="e19-1u-AFS" secondAttribute="leadingMargin" constant="4" id="ZSy-Bd-sC3"/>
+                                        <constraint firstItem="TxT-B0-qev" firstAttribute="top" secondItem="e19-1u-AFS" secondAttribute="topMargin" id="Zkc-zA-L1Y"/>
+                                        <constraint firstItem="hMw-ss-2xw" firstAttribute="top" secondItem="IkL-jS-Vf3" secondAttribute="bottom" constant="13" id="bBA-ax-xMe"/>
+                                        <constraint firstItem="hMw-ss-2xw" firstAttribute="top" secondItem="jS9-DR-jTF" secondAttribute="bottom" constant="33" id="dbL-KG-fkA"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="Aq8-Hn-NlT" secondAttribute="trailing" constant="32" id="eD2-gJ-3bu"/>
+                                        <constraint firstItem="16t-EK-nd4" firstAttribute="trailing" secondItem="e19-1u-AFS" secondAttribute="trailingMargin" constant="-32" id="glY-N8-UzR"/>
+                                        <constraint firstItem="jS9-DR-jTF" firstAttribute="leading" secondItem="16t-EK-nd4" secondAttribute="trailing" constant="8" id="hmO-pu-hNH"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="hMw-ss-2xw" secondAttribute="trailing" constant="-8" id="sMw-sP-ZNy"/>
+                                        <constraint firstItem="jS9-DR-jTF" firstAttribute="top" secondItem="TxT-B0-qev" secondAttribute="bottom" constant="4" id="u2f-XZ-Mx1"/>
+                                        <constraint firstItem="16t-EK-nd4" firstAttribute="top" secondItem="TxT-B0-qev" secondAttribute="bottom" constant="6" id="vJh-Uy-OED"/>
+                                        <constraint firstItem="hMw-ss-2xw" firstAttribute="leading" secondItem="e19-1u-AFS" secondAttribute="leadingMargin" constant="-8" id="wbk-vI-qip"/>
+                                        <constraint firstItem="TxT-B0-qev" firstAttribute="leading" secondItem="e19-1u-AFS" secondAttribute="leadingMargin" constant="4" id="wlG-62-0dB"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <animations/>
+                                <color key="backgroundColor" cocoaTouchSystemColor="lightTextColor"/>
+                                <connections>
+                                    <outlet property="createDate" destination="Aq8-Hn-NlT" id="ESA-tf-7uF"/>
+                                    <outlet property="editItinerary" destination="jS9-DR-jTF" id="TlD-2i-gLh"/>
+                                    <outlet property="itineraryPath" destination="16t-EK-nd4" id="YUD-Hg-cUv"/>
+                                    <outlet property="itineraryname" destination="TxT-B0-qev" id="o1L-QU-22I"/>
+                                    <segue destination="vC3-pB-5Vb" kind="showDetail" identifier="showRoute" id="aY1-pg-li2"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <sections/>
+                        <connections>
+                            <outlet property="dataSource" destination="7bK-jq-Zjz" id="Gho-Na-rnu"/>
+                            <outlet property="delegate" destination="7bK-jq-Zjz" id="RA6-mI-bju"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="My itinerary" id="Zdf-7t-Un8"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Rux-fX-hf1" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="709" y="-630"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="r7l-gg-dq7">
+            <objects>
+                <navigationController id="vC3-pB-5Vb" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="DjV-YW-jjY">
+                        <autoresizingMask key="autoresizingMask"/>
+                        <animations/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="JEX-9P-axG" kind="relationship" relationship="rootViewController" id="GKi-kA-LjT"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="SLD-UC-DBI" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-45" y="129"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="EditRoute" width="44" height="44"/>
+        <image name="itineraryIcon" width="50" height="50"/>
+        <image name="mapView" width="22" height="22"/>
+        <image name="settings" width="22" height="22"/>
+    </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="aY1-pg-li2"/>
+    </inferredMetricsTieBreakers>
+</document>

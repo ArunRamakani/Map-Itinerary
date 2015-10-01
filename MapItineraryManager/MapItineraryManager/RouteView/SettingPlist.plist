@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Traffic Mode</key>
+	<array>
+		<string>default</string>
+		<string>disabled</string>
+		<string>enabled</string>
+	</array>
+	<key>Transport Mode</key>
+	<array>
+		<string>publicTransport</string>
+		<string>carHOV</string>
+		<string>pedestrian</string>
+		<string>truck</string>
+		<string>car</string>
+	</array>
+	<key>Route Mode</key>
+	<array>
+		<string>shortest</string>
+		<string>fastest</string>
+	</array>
+	<key>Waypoint Type</key>
+	<array>
+		<string>stopOver</string>
+		<string>passThrough</string>
+	</array>
+</dict>
+</plist>
